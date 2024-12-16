@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { networkService } from '../services/api';
-import { NetworkPoint, RouteResponse, NetworkPlan } from '../types/network';
+import { NetworkPoint, RouteResponse } from '../types/network';
 
 
 export const NetworkPlanner: React.FC = () => {

@@ -9,10 +9,8 @@ public class RouteResponse {
     private List<NetworkPoint> path;
     private Double distance;
 
-    // Constructor
     public RouteResponse() {}
 
-    // Getters y Setters
     public List<NetworkPoint> getPath() {
         return path;
     }

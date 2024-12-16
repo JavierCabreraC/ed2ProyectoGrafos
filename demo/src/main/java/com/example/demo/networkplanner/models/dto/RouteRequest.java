@@ -5,7 +5,6 @@ public class RouteRequest {
     private Long startId;
     private Long endId;
 
-    // Constructor
     public RouteRequest() {}
 
     public RouteRequest(Long startId, Long endId) {
@@ -13,7 +12,6 @@ public class RouteRequest {
         this.endId = endId;
     }
 
-    // Getters y Setters
     public Long getStartId() {
         return startId;
     }

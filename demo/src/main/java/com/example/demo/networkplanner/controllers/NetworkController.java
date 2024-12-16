@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/network")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "${CLIENT_URL}")
 public class NetworkController {
 
     private final NetworkService networkService;
@@ -28,7 +28,7 @@ public class NetworkController {
             return ResponseEntity.ok(networkService.getAllPoints());
         } catch (Exception e) {
             return ResponseEntity.internalServerError()
-                    .body("Error retrieving network points: " + e.getMessage());
+                    .body("Error de lectura de los puntos de la red: " + e.getMessage());
         }
     }
 
@@ -42,7 +42,7 @@ public class NetworkController {
             return ResponseEntity.ok(route);
         } catch (Exception e) {
             return ResponseEntity.internalServerError()
-                    .body("Error calculating route: " + e.getMessage());
+                    .body("Error calculando las rutas: " + e.getMessage());
         }
     }
 
@@ -53,7 +53,7 @@ public class NetworkController {
             return ResponseEntity.ok(plan);
         } catch (Exception e) {
             return ResponseEntity.internalServerError()
-                    .body("Error generating MST: " + e.getMessage());
+                    .body("Error generado Árbol de expansión: " + e.getMessage());
         }
     }
 
@@ -63,7 +63,7 @@ public class NetworkController {
             return ResponseEntity.ok(networkService.calculateAllPaths());
         } catch (Exception e) {
             return ResponseEntity.internalServerError()
-                    .body("Error calculating all paths: " + e.getMessage());
+                    .body("Error calculando los caminos: " + e.getMessage());
         }
     }
 }

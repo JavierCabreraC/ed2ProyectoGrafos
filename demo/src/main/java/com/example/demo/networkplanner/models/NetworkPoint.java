@@ -13,7 +13,6 @@ public class NetworkPoint {
     private Double latitude;
     private Double longitude;
 
-    // Constructor
     public NetworkPoint() {}
 
     public NetworkPoint(String name, Double latitude, Double longitude) {
@@ -22,7 +21,6 @@ public class NetworkPoint {
         this.longitude = longitude;
     }
 
-    // Getters y Setters
     public Long getId() {
         return id;
     }

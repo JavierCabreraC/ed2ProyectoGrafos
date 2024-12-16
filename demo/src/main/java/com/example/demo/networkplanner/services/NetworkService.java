@@ -24,7 +24,6 @@ public class NetworkService {
         NetworkPoint start = networkPointRepository.findById(startId).orElseThrow();
         NetworkPoint end = networkPointRepository.findById(endId).orElseThrow();
 
-        // Aquí usarías tu implementación de Dijkstra
         RouteResponse response = new RouteResponse();
         response.setPath(Arrays.asList(start, end));
         response.setDistance(0.0); // Calcular distancia real
@@ -46,7 +45,6 @@ public class NetworkService {
         // Implementación básica usando Floyd
         List<NetworkPoint> points = networkPointRepository.findAll();
         Map<String, Double> allPaths = new HashMap<>();
-        // Aquí usarías tu implementación de Floyd
         return allPaths;
     }
 }
