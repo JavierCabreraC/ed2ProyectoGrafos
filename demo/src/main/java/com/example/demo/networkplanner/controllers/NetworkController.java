@@ -4,6 +4,7 @@ import com.example.demo.networkplanner.models.NetworkPlan;
 import com.example.demo.networkplanner.models.dto.MSTRequest;
 import com.example.demo.networkplanner.models.dto.RouteRequest;
 import com.example.demo.networkplanner.models.dto.RouteResponse;
+import com.example.demo.networkplanner.services.ConnectionService;
 import com.example.demo.networkplanner.services.NetworkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +17,12 @@ import org.springframework.web.bind.annotation.*;
 public class NetworkController {
 
     private final NetworkService networkService;
+    private final ConnectionService connectionService;
 
     @Autowired
-    public NetworkController(NetworkService networkService) {
+    public NetworkController(NetworkService networkService, ConnectionService connectionService) {
         this.networkService = networkService;
+        this.connectionService = connectionService;
     }
 
     @GetMapping("/points")
@@ -36,8 +39,8 @@ public class NetworkController {
     public ResponseEntity<?> calculateRoute(@RequestBody RouteRequest request) {
         try {
             RouteResponse route = networkService.calculateRoute(
-                    request.getStartId(),
-                    request.getEndId()
+                    request.getInicioId(),
+                    request.getFinId()
             );
             return ResponseEntity.ok(route);
         } catch (Exception e) {
@@ -49,7 +52,7 @@ public class NetworkController {
     @PostMapping("/mst/generate")
     public ResponseEntity<?> generateMST(@RequestBody MSTRequest request) {
         try {
-            NetworkPlan plan = networkService.generateMST(request.getAlgorithm());
+            NetworkPlan plan = networkService.generateMST(request.getAlgoritmo());
             return ResponseEntity.ok(plan);
         } catch (Exception e) {
             return ResponseEntity.internalServerError()
@@ -64,6 +67,16 @@ public class NetworkController {
         } catch (Exception e) {
             return ResponseEntity.internalServerError()
                     .body("Error calculando los caminos: " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/connections")
+    public ResponseEntity<?> getAllConnections() {
+        try {
+            return ResponseEntity.ok(connectionService.getAllConnections());
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError()
+                    .body("Error obteniendo conexiones: " + e.getMessage());
         }
     }
 }

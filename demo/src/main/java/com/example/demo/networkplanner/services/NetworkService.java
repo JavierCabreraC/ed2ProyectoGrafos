@@ -25,8 +25,8 @@ public class NetworkService {
         NetworkPoint end = networkPointRepository.findById(endId).orElseThrow();
 
         RouteResponse response = new RouteResponse();
-        response.setPath(Arrays.asList(start, end));
-        response.setDistance(0.0); // Calcular distancia real
+        response.setCamino(Arrays.asList(start, end));
+        response.setDistancia(0.0); // Calcular distancia real
         return response;
     }
 
@@ -35,9 +35,9 @@ public class NetworkService {
         List<NetworkPoint> points = networkPointRepository.findAll();
 
         NetworkPlan plan = new NetworkPlan();
-        plan.setAlgorithm(algorithm);
+        plan.setAlgoritmo(algorithm);
         plan.setPoints(points);
-        plan.setTotalCost(0.0); // Calcular costo real
+        plan.setCostoTotal(0.0); // Calcular costo real
         return plan;
     }
 

@@ -12,8 +12,8 @@ public class NetworkPlan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String algorithm;
-    private Double totalCost;
+    private String algoritmo;
+    private Double costoTotal;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
@@ -33,20 +33,20 @@ public class NetworkPlan {
         this.id = id;
     }
 
-    public String getAlgorithm() {
-        return algorithm;
+    public String getAlgoritmo() {
+        return algoritmo;
     }
 
-    public void setAlgorithm(String algorithm) {
-        this.algorithm = algorithm;
+    public void setAlgoritmo(String algoritmo) {
+        this.algoritmo = algoritmo;
     }
 
-    public Double getTotalCost() {
-        return totalCost;
+    public Double getCostoTotal() {
+        return costoTotal;
     }
 
-    public void setTotalCost(Double totalCost) {
-        this.totalCost = totalCost;
+    public void setCostoTotal(Double costoTotal) {
+        this.costoTotal = costoTotal;
     }
 
     public List<NetworkPoint> getPoints() {

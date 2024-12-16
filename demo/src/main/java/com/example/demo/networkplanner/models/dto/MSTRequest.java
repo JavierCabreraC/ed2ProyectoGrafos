@@ -2,19 +2,19 @@ package com.example.demo.networkplanner.models.dto;
 
 
 public class MSTRequest {
-    private String algorithm;
+    private String algoritmo;
 
     public MSTRequest() {}
 
-    public MSTRequest(String algorithm) {
-        this.algorithm = algorithm;
+    public MSTRequest(String algoritmo) {
+        this.algoritmo = algoritmo;
     }
 
-    public String getAlgorithm() {
-        return algorithm;
+    public String getAlgoritmo() {
+        return algoritmo;
     }
 
-    public void setAlgorithm(String algorithm) {
-        this.algorithm = algorithm;
+    public void setAlgoritmo(String algoritmo) {
+        this.algoritmo = algoritmo;
     }
 }

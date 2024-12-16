@@ -1,18 +1,27 @@
 export interface NetworkPoint {
     id: number;
-    name: string;
-    latitude: number;
-    longitude: number;
+    nombre: string;
+    latitud: number;
+    longitud: number;
 }
 
 export interface RouteResponse {
-  path: NetworkPoint[];
-  distance: number;
+    camino: NetworkPoint[];
+    distancia: number;
 }
 
 export interface NetworkPlan {
-  id: number;
-  algorithm: string;
-  totalCost: number;
-  points: NetworkPoint[];
+    id: number;
+    algoritmo: string;
+    costoTotal: number;
+    puntos: NetworkPoint[];
+}
+
+export interface Connection {
+    id: number;
+    point_a_id: number;
+    point_b_id: number;
+    distancia: number;
+    costo: number;
+    estado: string;
 }

@@ -9,16 +9,22 @@ public class NetworkPoint {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private Double latitude;
-    private Double longitude;
+
+    @Column(name = "name")
+    private String nombre;
+
+    @Column(name = "latitude")
+    private Double latitud;
+
+    @Column(name = "longitude")
+    private Double longitud;
 
     public NetworkPoint() {}
 
-    public NetworkPoint(String name, Double latitude, Double longitude) {
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
+    public NetworkPoint(String nombre, Double latitud, Double longitud) {
+        this.nombre = nombre;
+        this.latitud = latitud;
+        this.longitud = longitud;
     }
 
     public Long getId() {
@@ -29,27 +35,27 @@ public class NetworkPoint {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public Double getLatitude() {
-        return latitude;
+    public Double getLatitud() {
+        return latitud;
     }
 
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
+    public void setLatitud(Double latitud) {
+        this.latitud = latitud;
     }
 
-    public Double getLongitude() {
-        return longitude;
+    public Double getLongitud() {
+        return longitud;
     }
 
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
+    public void setLongitud(Double longitud) {
+        this.longitud = longitud;
     }
 }

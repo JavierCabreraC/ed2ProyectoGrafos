@@ -2,29 +2,29 @@ package com.example.demo.networkplanner.models.dto;
 
 
 public class RouteRequest {
-    private Long startId;
-    private Long endId;
+    private Long inicioId;
+    private Long finId;
 
     public RouteRequest() {}
 
-    public RouteRequest(Long startId, Long endId) {
-        this.startId = startId;
-        this.endId = endId;
+    public RouteRequest(Long inicioId, Long finId) {
+        this.inicioId = inicioId;
+        this.finId = finId;
     }
 
-    public Long getStartId() {
-        return startId;
+    public Long getInicioId() {
+        return inicioId;
     }
 
-    public void setStartId(Long startId) {
-        this.startId = startId;
+    public void setInicioId(Long inicioId) {
+        this.inicioId = inicioId;
     }
 
-    public Long getEndId() {
-        return endId;
+    public Long getFinId() {
+        return finId;
     }
 
-    public void setEndId(Long endId) {
-        this.endId = endId;
+    public void setFinId(Long finId) {
+        this.finId = finId;
     }
 }

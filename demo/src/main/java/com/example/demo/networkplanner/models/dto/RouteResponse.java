@@ -6,24 +6,24 @@ import java.util.List;
 
 
 public class RouteResponse {
-    private List<NetworkPoint> path;
-    private Double distance;
+    private List<NetworkPoint> camino;
+    private Double distancia;
 
     public RouteResponse() {}
 
-    public List<NetworkPoint> getPath() {
-        return path;
+    public List<NetworkPoint> getCamino() {
+        return camino;
     }
 
-    public void setPath(List<NetworkPoint> path) {
-        this.path = path;
+    public void setCamino(List<NetworkPoint> camino) {
+        this.camino = camino;
     }
 
-    public Double getDistance() {
-        return distance;
+    public Double getDistancia() {
+        return distancia;
     }
 
-    public void setDistance(Double distance) {
-        this.distance = distance;
+    public void setDistancia(Double distancia) {
+        this.distancia = distancia;
     }
 }
