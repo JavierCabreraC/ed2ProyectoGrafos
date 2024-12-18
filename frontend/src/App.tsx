@@ -8,7 +8,7 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-              <Route path="/" element={<NetworkPlanner />} />
+                <Route path="/" element={<NetworkPlanner />} />
             </Routes>
         </BrowserRouter>
     );

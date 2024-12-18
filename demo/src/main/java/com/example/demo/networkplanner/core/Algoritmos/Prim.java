@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 
 
 public class Prim<G extends Comparable<G>> {
-    private class Arista implements Comparable<Arista> {
+    public class Arista implements Comparable<Arista> {
         private final G origen, destino;
         private final double peso;
 

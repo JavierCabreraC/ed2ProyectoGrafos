@@ -3,6 +3,7 @@ export interface NetworkPoint {
     nombre: string;
     latitud: number;
     longitud: number;
+    type: string;
 }
 
 export interface RouteResponse {
@@ -14,14 +15,14 @@ export interface NetworkPlan {
     id: number;
     algoritmo: string;
     costoTotal: number;
-    puntos: NetworkPoint[];
+    points: NetworkPoint[];
 }
 
 export interface Connection {
     id: number;
-    point_a_id: number;
-    point_b_id: number;
-    distancia: number;
-    costo: number;
-    estado: string;
+    pointAId: number;
+    pointBId: number;
+    distance: number;
+    cost: number;
+    status: string;
 }

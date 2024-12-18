@@ -16,13 +16,16 @@ export const networkService = {
         api.get<NetworkPoint[]>('/points'),
 
     calculateRoute: (startId: number, endId: number) =>
-        api.post<RouteResponse>('/route/calculate', { startId, endId }),
+        api.post<RouteResponse>('/route/calculate', { 
+            inicioId: startId, 
+            finId: endId 
+        }),
 
     generateMST: (algoritmo: 'prim' | 'kruskal') =>
-        api.post<NetworkPlan>('/mst/generate', { algoritmo }),
+        api.post<NetworkPlan>('/mst/generate', { algoritmo: algoritmo }),
 
     calculateAllPaths: () =>
-        api.post<Record<string, number>>('/floyd/calculate'),
+        api.get<Record<string, number>>('/floyd/calculate'),
 
     getConnections: () =>
         api.get<Connection[]>('/connections')
